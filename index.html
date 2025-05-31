@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureRecipes - Culinary Cybersecurity Lab</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .security-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .recipe-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .recipe-title {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .recipe-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        .ingredients {
+            margin-bottom: 20px;
+        }
+
+        .ingredients h4 {
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        .ingredients ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .ingredients li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .instructions {
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        .security-panel {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #00ff00;
+        }
+
+        .security-title {
+            color: #00ff00;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .security-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .security-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .security-list li:before {
+            content: "✓";
+            color: #00ff00;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .warning-box {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 SecureRecipes</h1>
+            <p>Cybersecurity Learning Lab - Recipe Edition</p>
+            <div class="security-badge">🛡️ SECURITY STUDY ENVIRONMENT</div>
+        </div>
+
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <div class="recipe-title">🍝 Secure Spaghetti Carbonara</div>
+                <div class="recipe-meta">
+                    <span>⏱️ 20 mins</span>
+                    <span>👥 4 servings</span>
+                    <span>🔥 Medium</span>
+                </div>
+                <div class="ingredients">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>400g spaghetti</li>
+                        <li>200g guanciale or pancetta</li>
+                        <li>3 large eggs</li>
+                        <li>100g Pecorino Romano cheese</li>
+                        <li>Black pepper to taste</li>
+                        <li>Salt for pasta water</li>
+                    </ul>
+                </div>
+                <div class="instructions">
+                    <strong>Instructions:</strong> Cook pasta in salted water. Meanwhile, render guanciale until crispy. Whisk eggs with grated cheese and pepper. Drain pasta, reserving water. Toss hot pasta with guanciale, then with egg mixture off heat. Add pasta water as needed for creaminess.
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-title">🥘 Encrypted Chicken Curry</div>
+                <div class="recipe-meta">
+                    <span>⏱️ 45 mins</span>
+                    <span>👥 6 servings</span>
+                    <span>🔥 Easy</span>
+                </div>
+                <div class="ingredients">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>1kg chicken, cut in pieces</li>
+                        <li>2 onions, sliced</li>
+                        <li>3 tomatoes, chopped</li>
+                        <li>2 tsp garam masala</li>
+                        <li>1 tsp turmeric</li>
+                        <li>400ml coconut milk</li>
+                        <li>Fresh coriander</li>
+                    </ul>
+                </div>
+                <div class="instructions">
+                    <strong>Instructions:</strong> Sauté onions until golden. Add spices and cook for 1 minute. Add chicken and brown. Add tomatoes and cook until soft. Pour in coconut milk, simmer for 25 minutes. Garnish with fresh coriander.
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <div class="recipe-title">🍰 Firewall Chocolate Cake</div>
+                <div class="recipe-meta">
+                    <span>⏱️ 1 hour</span>
+                    <span>👥 8 servings</span>
+                    <span>🔥 Hard</span>
+                </div>
+                <div class="ingredients">
+                    <h4>Ingredients:</h4>
+                    <ul>
+                        <li>200g dark chocolate</li>
+                        <li>200g butter</li>
+                        <li>4 eggs</li>
+                        <li>200g sugar</li>
+                        <li>100g flour</li>
+                        <li>Pinch of salt</li>
+                        <li>Vanilla extract</li>
+                    </ul>
+                </div>
+                <div class="instructions">
+                    <strong>Instructions:</strong> Melt chocolate and butter together. Beat eggs and sugar until fluffy. Fold in chocolate mixture, then flour and salt. Bake at 180°C for 25-30 minutes. Cool before serving with your favorite frosting.
+                </div>
+            </div>
+        </div>
+
+        <div class="security-panel">
+            <div class="security-title">🔒 BACKEND SECURITY MEASURES IMPLEMENTED</div>
+            <ul class="security-list">
+                <li>Multi-factor authentication (MFA) required</li>
+                <li>JWT tokens with short expiration times</li>
+                <li>Rate limiting on all API endpoints</li>
+                <li>SQL injection protection via parameterized queries</li>
+                <li>XSS protection with Content Security Policy</li>
+                <li>HTTPS enforcement with HSTS headers</li>
+                <li>Input validation and sanitization</li>
+                <li>Database encryption at rest</li>
+                <li>Regular security audits and penetration testing</li>
+                <li>WAF (Web Application Firewall) configured</li>
+                <li>DDoS protection enabled</li>
+                <li>Admin panel accessible only via VPN</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            ⚠️ WARNING: This is a cybersecurity learning environment. 
+            Backend access is restricted and monitored for educational purposes only.
+        </div>
+    </div>
+
+    <script>
+        // Simulate some basic frontend security measures
+        
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Disable F12, Ctrl+Shift+I, Ctrl+U
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                (e.ctrlKey && e.key === 'u')) {
+                e.preventDefault();
+                alert('🔒 Developer tools disabled for security demonstration');
+            }
+        });
+
+        // Add some dynamic content
+        document.addEventListener('DOMContentLoaded', function() {
+            const securityBadge = document.querySelector('.security-badge');
+            setInterval(() => {
+                securityBadge.style.opacity = securityBadge.style.opacity === '0.5' ? '1' : '0.5';
+            }, 2000);
+        });
+
+        // Simulate backend communication (frontend only - no actual backend)
+        function simulateSecureRequest() {
+            console.log('🔒 Simulated secure API request - No actual backend accessible');
+            return Promise.resolve({
+                status: 'secure',
+                message: 'Backend remains protected'
+            });
+        }
+    </script>
+</body>
+</html>
